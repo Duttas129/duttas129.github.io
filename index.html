@@ -9,32 +9,37 @@
   <link rel="stylesheet" href="assets/theme.css" />
   <style>
     .splash {
-      min-height: 100dvh;
+      min-height: calc(100dvh - var(--bar-h));
       display: grid;
       place-content: center;
+      justify-items: center;
       text-align: center;
-      gap: 0.5rem;
+      gap: 1rem;
       padding: 2rem;
-    }
-    .splash .mark { font-size: clamp(2rem, 8vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; }
-    .splash .mark b {
-      background: var(--grad-blue);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .splash p {
       color: var(--text-dim);
-      font-size: 0.95rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
     }
   </style>
 </head>
 <body>
   <div class="aurora"></div>
+
+  <header class="topbar">
+    <span aria-hidden="true"></span>
+    <div class="lang-mount"></div>
+  </header>
+
   <div class="splash">
-    <div class="mark reveal">Dutta <b>Residence</b></div>
+    <div class="logo hero reveal" aria-label="Dutta Residence">
+      <span class="l-d">Dutta</span><span class="l-r">Residence</span>
+    </div>
     <p class="reveal" data-i18n="root_sub">Private residence</p>
   </div>
+
   <script src="assets/i18n.js"></script>
 </body>
 </html>

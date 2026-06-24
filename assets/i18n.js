@@ -211,7 +211,9 @@
     }
   };
 
-  var GLOBE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
+  /* bilingual translate mark (CJK + Latin, varying heights) — the glyph Apple uses */
+  var GLYPH = '<span class="lang-glyph" aria-hidden="true">文A</span>';
+  var CARET = '<svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
 
   function detect() {
     try {
@@ -268,7 +270,7 @@
     btn.type = "button";
     btn.setAttribute("aria-haspopup", "true");
     btn.setAttribute("data-i18n-aria", "lang_aria");
-    btn.innerHTML = GLOBE + '<span class="lang-current"></span>';
+    btn.innerHTML = GLYPH + '<span class="lang-current"></span>' + CARET;
     labelEl = btn.querySelector(".lang-current");
 
     menuEl = document.createElement("div");
@@ -299,7 +301,8 @@
 
     wrap.appendChild(btn);
     wrap.appendChild(menuEl);
-    document.body.appendChild(wrap);
+    var mount = document.querySelector(".lang-mount");
+    (mount || document.body).appendChild(wrap);
   }
 
   /* entrance reveal — staggered, GPU-only, respects reduced motion.
