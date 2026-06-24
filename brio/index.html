@@ -13,7 +13,13 @@
   <meta property="og:type" content="website" />
 </head>
 <body>
-  <div class="aurora"></div>
+  <picture class="bg">
+    <source type="image/webp" sizes="100vw"
+      srcset="../assets/bg/bg-400.webp 400w, ../assets/bg/bg-600.webp 600w, ../assets/bg/bg-800.webp 800w, ../assets/bg/bg-1080.webp 1080w, ../assets/bg/bg-1440.webp 1440w, ../assets/bg/bg-1920.webp 1920w, ../assets/bg/bg-2400.webp 2400w" />
+    <img src="../assets/bg/bg-800.jpg" alt="" aria-hidden="true" decoding="async" fetchpriority="high"
+      sizes="100vw"
+      srcset="../assets/bg/bg-400.jpg 400w, ../assets/bg/bg-600.jpg 600w, ../assets/bg/bg-800.jpg 800w, ../assets/bg/bg-1080.jpg 1080w, ../assets/bg/bg-1440.jpg 1440w, ../assets/bg/bg-1920.jpg 1920w, ../assets/bg/bg-2400.jpg 2400w" />
+  </picture>
 
   <header class="topbar">
     <a class="logo" href="../" aria-label="Dutta Residence">
@@ -33,9 +39,8 @@
       <div class="vehicle-photo">
         <img src="../Brio.png" alt="Honda Brio" loading="eager" />
       </div>
-      <div class="vehicle-name">Honda Brio</div>
-      <div style="margin-top:0.55rem">
-        <div class="contact-role" data-i18n="reg_no" style="margin-bottom:0.4rem">Registration</div>
+      <div class="vehicle-head">
+        <span class="vehicle-name">Honda Brio</span>
         <span class="reg-plate">WB&nbsp;02&nbsp;AA&nbsp;5159</span>
       </div>
     </div>
@@ -101,5 +106,6 @@
   </div>
 
   <script src="../assets/i18n.js"></script>
+  <script src="../assets/ui.js"></script>
 </body>
 </html>
